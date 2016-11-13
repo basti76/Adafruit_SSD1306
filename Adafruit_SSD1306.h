@@ -18,13 +18,7 @@ All text above, and the splash screen must be included in any redistribution
 #ifndef _Adafruit_SSD1306_H_
 #define _Adafruit_SSD1306_H_
 
-#if ARDUINO >= 100
- #include "Arduino.h"
- #define WIRE_WRITE Wire.write
-#else
- #include "WProgram.h"
-  #define WIRE_WRITE Wire.send
-#endif
+#include "Particle.h"
 
 #if defined(__SAM3X8E__)
  typedef volatile RwReg PortReg;
@@ -41,8 +35,7 @@ All text above, and the splash screen must be included in any redistribution
  #define HAVE_PORTREG
 #endif
 
-#include <SPI.h>
-#include <Adafruit_GFX.h>
+#include "../Adafruit-GFX-Library/Adafruit_GFX.h"
 
 #define BLACK 0
 #define WHITE 1
@@ -66,8 +59,8 @@ All text above, and the splash screen must be included in any redistribution
     SSD1306_96_16
 
     -----------------------------------------------------------------------*/
-//   #define SSD1306_128_64
-   #define SSD1306_128_32
+#define SSD1306_128_64
+//   #define SSD1306_128_32
 //   #define SSD1306_96_16
 /*=========================================================================*/
 
